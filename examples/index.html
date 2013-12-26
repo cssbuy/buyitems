@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Buy Items</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/buyitems.css" />
+</head>
+<body>
+	<div id="buyitems">
+		<div class="add-form input-group">
+		  	<input type="text" class="form-control" id="crawl-url" placeholder="Enter item's url here." autofocus />
+		  	<span class="input-group-btn">
+				<button class="btn btn-warning" type="button" id="add-one">Add</button>
+		  	</span>
+		</div>
+
+		<div class="alert alert-warning" id="statistic-tip">
+			<span class="glyphicon glyphicon-exclamation-sign"></span> <span class='msg'>Please Add An Item First.</span>
+		</div>
+		<div class="panel panel-warning" id="statistic" style="display:none;">
+		  	<div class="panel-heading">
+		  		<span class="glyphicon glyphicon-list-alt"></span> Statistic
+		  	</div>
+		  	<div class="panel-body">
+		  		<dl id="statistic-list">
+		    		<script type="text/template" id="statistic-template">
+		    			<dt>Total Price: </dt>
+		    			<dd>&yen;<%- totalprice %></dd>
+		    			<dt>Total Ship: </dt>
+		    			<dd>&yen;<%- totalfreight %></dd>
+		    			<dt>Total Fee: </dt>
+		    			<dd>&yen;<%- totalfee %></dd>
+		    			<dt>Total: </dt>
+		    			<dd>&yen;<%- total %></dd>
+		    		</script>
+		    	</dl>
+		    	<button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Shopping Cart</button>
+		  	</div>
+		</div>
+
+		<div class="loading" style="display:none;"></div>
+
+		<div id="itemlist">
+			<script type="text/template" id="item-template">
+				<div class="header clearfix" title="Click to show/hide detail information.">
+					<h3 class='name'><a class="item-link" title="Click to view in taobao/tmall." href="<%- Href %>" target="_blank"><%- Name %></a></h3>
+					<div class="price">
+						&yen;<%- Totalfee %>
+					</div>
+					<a class="remove" title="Click to remove this item.">
+						<span class="glyphicon glyphicon-remove"></span>
+					</a>
+				</div>
+				<div class="more">
+					<div class="row">
+						<div class="col-sm-3">
+							<img src="<%= Picture ? Picture : 'default.jpg' %>" alt="<%= Picture ? 'Item Image' : 'Failed to get item image.' %>">
+						</div>
+						<div class="col-sm-9">
+							<dl>
+								<dt>Price:</dt>
+								<dd>
+									<div class="input-group">
+								  		<span class="input-group-addon">&yen;</span>
+								  		<input type="text" placeholder="Enter Price Yourself" class="price form-control" name="price" value="<%- Price %>" />
+								  	</div>
+								</dd>
+							</dl>						
+							<dl>
+								<dt>Color:</dt>
+								<dd>
+									<input type="text" placeholder="Enter Item Color" name="color" class="form-control" />
+								</dd>
+							</dl>
+							<dl>
+								<dt>Size:</dt>
+								<dd>
+									<input type="text" placeholder="Enter Item Size" name="size" class="form-control" />
+								</dd>
+							</dl>
+							<dl>
+								<dt>Domestic Shipping:</dt>
+								<dd>
+									<input type="text" placeholder="Enter Domestic Shipping Fee" class="freight form-control" name="freight" value="<%- Freight %>" />
+								</dd>
+							</dl>
+							<dl>
+								<dt>Server Fee:</dt>
+								<dd>
+									<input type="text" name="serverfee" class="form-control" value="<%- Serverfee %>" readonly />
+								</dd>
+							</dl>
+							<dl>
+								<dt>Quantity:</dt>
+								<dd>
+									<div class="input-group">
+									  	<span class="input-group-btn">
+									  		<button class="btn btn-default minus">-</button>
+									  	</span>
+									  	<input type="text" class="buynum form-control" name="buynum" value="<%= BuyNum ?  BuyNum : 1 %>" />
+									  	<span class="input-group-btn">
+									  		<button class="btn btn-default plus">+</button>
+									  	</span>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>Total Price:</dt>
+								<dd class="price">
+									&yen<strong id="total_price"><%- Totalfee %></strong>
+								</dd>
+							</dl>						
+						</div>
+					</div>
+				</div>
+			</script>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/backbone.js"></script>
+	<script type="text/javascript" src="js/buyitems.js"></script>
+</body>
+</html>

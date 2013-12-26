@@ -1,0 +1,149 @@
+/* 重写bootstrap */
+.panel{
+	margin-bottom: 10px;
+}
+.panel-warning{
+	border: 1px solid #ccc;
+}
+.panel-warning .panel-heading{
+	background: #edfed0;
+	font-weight: bold;
+}
+
+
+
+/* 页面样式 */
+#buyitems{
+	padding: 10px;
+}
+#buyitems .add-form{
+	margin-bottom: 10px;
+}
+#buyitems .alert{
+	padding: 5px 8px;
+	margin-bottom: 10px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+#buyitems .alert-warning{
+	background: #fefea4;
+	border: 1px solid #e6e098;
+	padding: 8px 12px;
+	color: #666;
+	font-size: 12px;
+}
+#buyitems .alert-warning .glyphicon{
+	color: #f96;
+}
+
+#buyitems .loading{
+	height: 32px;
+	margin: 10px 0;
+	background: transparent url(images/loading.gif) no-repeat 50% 50%;
+}
+
+#buyitems .item{
+	border: 1px solid #ccc;
+	-webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);	
+}
+#buyitems .item .header{
+	position: relative;
+	border-bottom: 1px solid #f60;
+	height: 40px;
+	line-height: 40px;
+	background: #edfed0;
+	padding-left: 15px;
+	padding-right: 15px;
+	cursor: pointer;
+}
+#buyitems .item .header h3{
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	margin: 0;
+	float: left;
+	display: inline-block;
+}
+#buyitems .item .header .price{
+	font-size: 14px;
+	color: #f60;
+	display: inline-block;
+	margin-left: 10px;
+}
+#buyitems .item .header .remove{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	font-size: 16px;
+	cursor: pointer;
+	color: #f60;
+}
+#buyitems .item{
+	margin-bottom: 10px;
+}
+#buyitems .item .more{
+	overflow: hidden;
+	padding: 10px;
+}
+#buyitems .item .more .col-sm-3 img{
+	width: 100%;
+}
+#buyitems .item .more dl{
+	margin-bottom: 12px;
+}
+#buyitems .item .more dl dt{
+	width: 130px;
+	float: left;
+	text-align: right;
+	font-weight: 100;
+	line-height: 30px;
+	height: 30px;	
+	color: #838383;
+}
+#buyitems .item .more dl dd{
+	padding-left: 150px;
+	line-height: 30px;
+	height: 30px;	
+}
+#buyitems .item .more dl dd .input-group{
+	width: 130px;
+}
+#buyitems .item .more dl dd .input-group input{
+	text-align: center;
+}
+#buyitems .item .more dl dd > input{
+	width: 130px;
+}
+#buyitems .item .more dl dd.price{
+	color: #f60;
+}
+
+
+/* 统计区块 */
+#statistic .panel-body{
+	position: relative;
+}
+#statistic .panel-body button{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+#statistic dl{
+	margin-bottom: 0;
+	box-sizing: border-box;
+}
+#statistic dl dt{
+	width: 80px;
+	font-weight: normal;
+	text-align: right;
+	display: inline-block;
+}
+#statistic dl dd{
+	width: 10%;
+	font-weight: 700;
+	display: inline-block;
+	color: #f60;
+}
