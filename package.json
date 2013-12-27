@@ -1,0 +1,32 @@
+{
+    "family":      "cssbuy",
+    "name":        "cssbuy.com",
+    "version":     "1.0.1",
+    "description": "cssbuy buyitems",
+    "homepage":    "https://github.com/cssbuy/buyitems",
+    "author":      "ermin.zem",
+    "repository":  {
+        "type": "git",
+        "url":  "https://github.com/cssbuy/buyitems.git"
+    },
+    "bugs": {
+        "url": ""
+    },
+    "keywords": ["buyitems"],
+    "licenses": "MIT",
+    "spm": {
+        "output":   ["buyitems.js"],
+        "alias":    {},
+        "devAlias": {},
+        "engines":  {}
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-jshint": "~0.1.1",
+        "grunt-contrib-nodeunit": "~0.1.2",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-contrib-less": "~0.7.0",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-cssmin": "*"
+    }
+}

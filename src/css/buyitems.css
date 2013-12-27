@@ -37,10 +37,27 @@
 	color: #f96;
 }
 
-#buyitems .loading{
-	height: 32px;
-	margin: 10px 0;
-	background: transparent url(images/loading.gif) no-repeat 50% 50%;
+#loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+#loading .overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+}
+#loading .loading{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -16px;
+    background: transparent url(../images/loading.gif) no-repeat 50% 50%;
 }
 
 #buyitems .item{
@@ -50,7 +67,6 @@
 }
 #buyitems .item .header{
 	position: relative;
-	border-bottom: 1px solid #f60;
 	height: 40px;
 	line-height: 40px;
 	background: #edfed0;
@@ -92,7 +108,7 @@
 	width: 100%;
 }
 #buyitems .item .more dl{
-	margin-bottom: 12px;
+	margin-bottom: 10px;
 }
 #buyitems .item .more dl dt{
 	width: 130px;
@@ -100,25 +116,42 @@
 	text-align: right;
 	font-weight: 100;
 	line-height: 30px;
-	height: 30px;	
 	color: #838383;
 }
 #buyitems .item .more dl dd{
 	padding-left: 150px;
 	line-height: 30px;
-	height: 30px;	
 }
 #buyitems .item .more dl dd .input-group{
 	width: 130px;
 }
+#buyitems .item .more input.request{
+    border: 1px solid #f60;
+}
 #buyitems .item .more dl dd .input-group input{
 	text-align: center;
 }
-#buyitems .item .more dl dd > input{
+#buyitems .item .more dl dd > input[type='text']{
 	width: 130px;
+}
+#buyitems .item .more dl textarea{
+    width: 80%;
+    height: 70px;
 }
 #buyitems .item .more dl dd.price{
 	color: #f60;
+}
+#buyitems .item .more dl dd .popover{
+    position: relative;
+    margin-top: 3px;
+    left: -15px;
+}
+#buyitems .item .more dl dd .popover .arrow{
+    left: 20px;
+}
+#buyitems .item .more dl dd .popover h5{
+    margin: 0 0 3px 0;
+    color: #838383;
 }
 
 
@@ -146,4 +179,80 @@
 	font-weight: 700;
 	display: inline-block;
 	color: #f60;
+}
+
+
+
+/* 提示类 */
+#popup_mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+#popup_box{
+    position: absolute;
+    text-align: center;
+    background-color: #fff;
+    background-clip: padding-box;
+    z-index: 100;
+    top: 100px;
+    width: 450px;
+    left: 50%;
+    margin-left: -225px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+#popup_box .glyphicon{
+    font-size: 60px;
+    margin: 20px auto;
+    display: block;
+    opacity: 0.9;
+}
+#popup_box p{
+    font-size: 12px;
+    color: #525252;
+    white-space:normal;
+    word-break:break-all;
+    width: 90%;
+    margin: 0 auto;
+}
+#popup_box .btn-border{
+    display: inline-block;
+    width: 50%;
+    border: 1px solid #f60;
+    color: #f60;
+    font-weight: 700;
+    border-radius: 2px;
+    background: #fff;
+    font-size: 12px;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    margin: 20px auto;
+}
+#popup_box .btn-border:active{
+    background: #f60;
+    color: #fff;
+}
+.info .glyphicon{
+    color: #ff7f00;
+}
+.error .glyphicon{
+    color: #d54a4a;
+}
+.success .glyphicon{
+    color: #51bd12;
+}
+.info .c-btn-orange{
+    background: #ff7f00;
+}
+.error .c-btn-orange{
+    background: #d54a4a;
+}
+.success .c-btn-orange{
+    background: #51bd12;
 }
