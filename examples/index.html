@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Buy Items</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/buyitems.css" />
+	<link rel="stylesheet" href="../dist/css/buyitems.css" />
 </head>
 <body>
 	<div id="buyitems">
@@ -35,11 +34,11 @@
 		    			<dd>&yen;<%- total %></dd>
 		    		</script>
 		    	</dl>
-		    	<button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Shopping Cart</button>
+		    	<button type="submit" class="btn btn-sm btn-warning" id="add-to-cart-btn">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>Add To Shopping Cart
+                </button>
 		  	</div>
 		</div>
-
-		<div class="loading" style="display:none;"></div>
 
 		<div id="itemlist">
 			<script type="text/template" id="item-template">
@@ -57,7 +56,7 @@
 						<div class="col-sm-3">
 							<img src="<%= Picture ? Picture : 'default.jpg' %>" alt="<%= Picture ? 'Item Image' : 'Failed to get item image.' %>">
 						</div>
-						<div class="col-sm-9">
+						<div class="col-sm-4">
 							<dl>
 								<dt>Price:</dt>
 								<dd>
@@ -67,18 +66,6 @@
 								  	</div>
 								</dd>
 							</dl>						
-							<dl>
-								<dt>Color:</dt>
-								<dd>
-									<input type="text" placeholder="Enter Item Color" name="color" class="form-control" />
-								</dd>
-							</dl>
-							<dl>
-								<dt>Size:</dt>
-								<dd>
-									<input type="text" placeholder="Enter Item Size" name="size" class="form-control" />
-								</dd>
-							</dl>
 							<dl>
 								<dt>Domestic Shipping:</dt>
 								<dd>
@@ -112,15 +99,49 @@
 								</dd>
 							</dl>						
 						</div>
+                        <div class="col-sm-5">
+                            <dl>
+                                <dt>Color:</dt>
+                                <dd>
+                                    <input type="text" placeholder="Enter Item Color" name="color" class="form-control request color" />
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>Size:</dt>
+                                <dd>
+                                    <input type="text" placeholder="Enter Item Size" name="size" class="form-control request size" />
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>Buy Yourself:</dt>
+                                <dd>
+                                    <input type="checkbox" class="buyyourself-btn" placeholder="You can buy item yourself and send to our warehouse." />
+                                    <div class="popover bottom">
+                                        <div class="arrow"></div>
+                                        <div class="popover-content">
+                                            <input type="text" name="expressno" class="form-control expressno" placeholder="Please enter tracking number here." />
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>Add a note:</dt>
+                                <dd>
+                                    <textarea class="form-control" name="note" placeholder="Add a note about the item here."></textarea>
+                                </dd>
+                            </dl>
+                        </div>
 					</div>
 				</div>
 			</script>
 		</div>
 	</div>
 
-	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js/underscore.js"></script>
-	<script type="text/javascript" src="js/backbone.js"></script>
-	<script type="text/javascript" src="js/buyitems.js"></script>
+    <div id="loading">
+        <div class="overlay"></div>
+        <div class="loading"></div>
+    </div>
+
+	<script type="text/javascript" src="../dist/js/buyitems.js"></script>
 </body>
 </html>
